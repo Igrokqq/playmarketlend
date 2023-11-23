@@ -1,0 +1,100 @@
+{
+  "name": "Nový Fio Smartbanking",
+  "short_name": "Nový Fio Smartbanking",
+  "description": "Všechny výhody Fio Banky nyní v nové aplikaci \"Nový Fio Smartbanking\" Využijte první nové příležitosti a zúčastněte se nových akcí pouze v aplikaci New Fio Smartbanking a získejte bonusy na míru!",
+  "icons": [
+    {
+      "src": "/assets/icons/maskable_icon_x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/assets/icons/maskable_icon_x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/assets/icons/maskable_icon_x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/assets/icons/maskable_icon_x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/assets/icons/maskable_icon_x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/icons/maskable_icon_x384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "/assets/icons/maskable_icon_x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/app.html",
+  "display": "fullscreen",
+  "background_color": "#FFF",
+  "theme_color": "#FFF",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "serviceworker": {
+    "src": "service-worker.js",
+    "scope": "/"
+  },
+  "categories": ["utilities", "productivity"],
+  "screenshots": [
+    {
+      "src": "/assets/screens/screen1.jpg",
+      "type": "image/jpg",
+      "sizes": "1080x1920"
+    },
+    {
+      "src": "/assets/screens/screen2.jpg",
+      "type": "image/jpg",
+      "sizes": "1080x1920"
+    },
+    {
+      "src": "/assets/screens/screen3.jpg",
+      "type": "image/jpg",
+      "sizes": "1080x1920"
+    },
+    {
+      "src": "/assets/screens/screen4.jpg",
+      "type": "image/jpg",
+      "sizes": "640x1280"
+    },
+    {
+      "src": "/assets/screens/screen5.jpg",
+      "type": "image/jpg",
+      "sizes": "640x1280"
+    }
+  ],
+  "iarc_rating_id": "12345",
+  "prefer_related_applications": false,
+  "shortcuts": [
+
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "files": [
+        {
+          "name": "file",
+          "accept": ["image/*"]
+        }
+      ]
+    }
+  }
+}
