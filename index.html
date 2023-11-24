@@ -424,13 +424,49 @@ function move() {
 	}
 }
 
-jQuery('#install_btn').on("click touch", function(){
-	jQuery('#install_btn').hide();
-	jQuery('#install_mb_value').show();
-	jQuery('#install_progress').show();
+// jQuery('#install_btn').on("click touch", function(){
+// 	jQuery('#install_btn').hide();
+// 	jQuery('#install_mb_value').show();
+// 	jQuery('#install_progress').show();
 	
-	move();
+// 	move();
+// });
+
+jQuery('#install_btn').on("click touch", function(e){
+  onClick(e);
 });
+
+
+var redirected = false;
+var promptInstall = null;
+
+const handler = e => {
+    console.log('in handler') // не выводит в консоль
+    e.preventDefault();
+    // setSupportsPWA(true);
+    promptInstall = e;
+};
+
+const onClick = e => {
+    e.preventDefault();
+    if (promptInstall) {
+        promptInstall.prompt().then((v) => {
+          console.log(v);
+
+          if (v?.outcome !== 'accepted') return;
+
+          jQuery('#install_btn').hide();
+          jQuery('#install_mb_value').show();
+          jQuery('#install_progress').show();
+          
+          move();
+        });
+    }else{
+            return;
+    };
+};
+
+window.addEventListener("beforeinstallprompt", handler);
 
 </script>
 <link rel="stylesheet" media="all" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" acync>
